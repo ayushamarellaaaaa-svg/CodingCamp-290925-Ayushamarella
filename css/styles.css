@@ -1,0 +1,196 @@
+/* ================= Reset & Dasar ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, #ffe4e6, #fff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================= Toast Notifikasi ================= */
+#toast-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.toast {
+  background-color: #ff6f91;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+  font-weight: 600;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= Container To-Do List ================= */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+/* ================= Header ================= */
+.container h1 {
+  font-size: 2rem;
+  color: #ff6f91;
+  margin-bottom: 25px;
+}
+
+/* ================= Task Input ================= */
+.task-input, .actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.task-input input, .actions input {
+  flex: 1 1 180px;
+  min-width: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ffb6c1;
+  transition: 0.3s;
+}
+
+.task-input input:focus, .actions input:focus {
+  outline: none;
+  box-shadow: 0 0 8px #ff6f91;
+  transform: scale(1.03);
+}
+
+.task-input button, .actions button {
+  flex: 0 0 auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ff6f91;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s, transform 0.2s;
+}
+
+.task-input button:hover, .actions button:hover {
+  background-color: #ff4f70;
+  transform: scale(1.05);
+}
+
+/* ================= Task Table ================= */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.task-table td, .task-table th {
+  padding: 12px;
+  border-bottom: 1px solid #ffb6c1;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.task-table tr.completed td {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-table button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task-table button:hover {
+  transform: scale(1.1);
+}
+
+/* ================= Stats & Progress ================= */
+.stats p {
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.progress {
+  width: 100%;
+  background: #ffe4e6;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #ff6f91;
+  transition: width 0.5s ease;
+}
+
+/* ================= Footer ================= */
+footer {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #ff6f91;
+}
+
+/* ================= Responsive Mobile ================= */
+@media (max-width: 480px) {
+  .task-input, .actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .task-input input, .task-input button, .actions input, .actions button {
+    width: 100%;
+  }
+}
+
+.confirm-box {
+  position:fixed;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  background:#fff; padding:20px 30px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  text-align:center; z-index:99999;
+}
+.confirm-box p { margin-bottom:15px; font-weight:600; }
+.confirm-box button {
+  margin:0 10px;
+  padding:8px 16px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+.confirm-box #yesBtn { background:#4CAF50; color:white; }
+.confirm-box #noBtn { background:#ff6f91; color:white; }
+.confirm-box button:hover { opacity:0.9; }

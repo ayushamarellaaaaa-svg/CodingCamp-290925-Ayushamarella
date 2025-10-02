@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevoU To-Do List</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Toast Notifikasi -->
+  <div id="toast-container"></div>
+
+  <!-- To-Do List Container -->
+  <div class="container" data-aos="zoom-in">
+    <h1 data-aos="fade-down" data-aos-delay="100">
+      <span id="typed"></span>
+    </h1>
+
+    <!-- Baris 1: Input + Tambah -->
+    <div class="task-input" data-aos="fade-up" data-aos-delay="200">
+      <input type="text" id="taskInput" placeholder="Tulis tugas...">
+      <input type="date" id="taskDate">
+      <button id="addTaskBtn">➕ Tambah</button>
+    </div>
+
+    <!-- Baris 2: Cari + Filter + Hapus -->
+    <div class="actions" data-aos="fade-up" data-aos-delay="300">
+      <input type="text" id="searchInput" placeholder="Cari tugas...">
+      <button id="deleteAllBtn">🗑️ Hapus Semua</button>
+    </div>
+
+    <!-- Task List -->
+    <table class="task-table" id="taskList" data-aos="fade-up" data-aos-delay="400"></table>
+
+    <!-- Stats & Progress -->
+    <div class="stats" data-aos="fade-up" data-aos-delay="500">
+      <p>Total: <span id="totalTasks">0</span> |
+         Selesai: <span id="completedTasks">0</span> |
+         Pending: <span id="pendingTasks">0</span>
+      </p>
+      <div class="progress">
+        <div class="progress-bar" id="progressPercent"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer data-aos="fade-up" data-aos-delay="600">
+    <p>Made with ❤️ by Cachaa</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
